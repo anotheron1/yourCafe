@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">yourCafe</string>
     <string name="registration_act_name">Registration</string>
+    <string name="catalogue_act_name">cafeCatalogue</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -19,4 +20,9 @@
     <string name="reg_done">Done</string>
     <string name="reg_phone_check">Check</string>
     <string name="action_registration">Registration</string>
+    <!-- Strings related to catalogue -->
+    <string name="ctg_search">Поиск</string>
+    <string name="ctg_1_cafe_name">6/4</string>
+    <string name="ctg_1_cafe_address">Череповец, Советский пр. 26Б</string>
+    <string name="ctg_1_cafe_assort">Кофе</string>
 </resources>

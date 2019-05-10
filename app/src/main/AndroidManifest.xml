@@ -22,6 +22,14 @@
             android:name=".ui.registration.RegistrationActivity"
             android:label="@string/registration_act_name">
         </activity>
+        <activity
+            android:theme="@style/AppTheme.NoActionBar"
+            android:name=".ui.cafeCatalogue.CatalogueActivity"
+            android:label="@string/catalogue_act_name">
+        </activity>
+        <activity
+            android:name=".ui.caffeClientMenu.ccmActivity">
+        </activity>
     </application>
 
 </manifest>
