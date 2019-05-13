@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_cart_notify"
+        android:title="Notify Button"
+        android:icon="@drawable/fav_selector"
+        app:actionLayout="@layout/activity_caffe_client_menu"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_cart_share"
+        android:title="Share Button"
+        android:icon="@mipmap/sf"
+        app:actionLayout="@layout/activity_caffe_client_menu"
+        app:showAsAction="always" />
+
+</menu>
