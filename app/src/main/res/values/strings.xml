@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">yourCafe</string>
-    <string name="registration_act_name">Registration</string>
-    <string name="catalogue_act_name">cafeCatalogue</string>
+    <string name="app_name">Твоё кафе</string>
+    <string name="registration_act_name">Регистрация</string>
+    <string name="catalogue_act_name">Акции</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Пароль</string>

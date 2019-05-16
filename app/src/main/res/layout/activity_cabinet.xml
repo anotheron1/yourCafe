@@ -18,12 +18,14 @@
             android:layout_marginTop="16dp"
             android:background="#673AB7"
             android:onClick="addStock"
-            android:text="Добавить акцию" />
+            android:text="Добавить акцию"
+            android:textColor="@android:color/background_light" />
+
         <TabWidget
             android:id="@android:id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:background="@android:color/background_light" />
         <FrameLayout
             android:id="@android:id/tabcontent"
             android:layout_width="match_parent"

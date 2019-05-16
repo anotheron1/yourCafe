@@ -37,9 +37,11 @@
             android:name=".ui.admin.AdminActivity">
         </activity>
         <activity
+            android:label="Кабинет"
             android:name=".ui.admin.CabinetActivity">
         </activity>
         <activity
+            android:label="Добавить акцию"
             android:name=".ui.admin.AddStockActivity">
         </activity>
     </application>
