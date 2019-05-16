@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.yourcafe.R;
+import com.example.yourcafe.ui.admin.AdminActivity;
 import com.example.yourcafe.ui.cafeCatalogue.CatalogueActivity;
 import com.example.yourcafe.ui.registration.RegistrationActivity;
 
@@ -115,6 +116,9 @@ public class LoginActivity extends AppCompatActivity {
                         passwordEditText.getText().toString());
                 if (usernameEditText.getText().toString().equals("client@mail.ru")) {
                     Intent intent = new Intent(LoginActivity.this, CatalogueActivity.class);
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
                     startActivity(intent);
                 }
             }

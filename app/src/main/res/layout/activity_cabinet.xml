@@ -9,6 +9,16 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
+
+        <Button
+            android:id="@+id/add_stock_button"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="#673AB7"
+            android:onClick="addStock"
+            android:text="Добавить акцию" />
         <TabWidget
             android:id="@android:id/tabs"
             android:layout_width="match_parent"
@@ -20,13 +30,13 @@
             android:layout_height="match_parent"
             >
             <include
-                layout="@layout/include_catalogue"
+                layout="@layout/include_cab_edit"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 />
             <include
-                layout="@layout/include_catalogue_favorite"
+                layout="@layout/include_stock_edit"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"

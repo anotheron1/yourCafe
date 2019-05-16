@@ -15,9 +15,7 @@
         android:id="@+id/fullnameReg"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="64dp"
-        android:layout_marginEnd="24dp"
 
         android:hint="@string/reg_fullname"
         android:inputType="textPersonName"
@@ -30,8 +28,6 @@
         android:id="@+id/usernameReg"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
 
         android:hint="@string/reg_email"
         android:inputType="textEmailAddress"
@@ -44,8 +40,6 @@
         android:id="@+id/passwordReg"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
 
         android:hint="@string/reg_password"
         android:inputType="textPassword"
@@ -58,8 +52,6 @@
         android:id="@+id/passwordRegRepeat"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
 
         android:hint="@string/reg_password_repeat"
         android:inputType="textPassword"
@@ -84,14 +76,16 @@
 
     <EditText
         android:id="@+id/editText_carrierNumber"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
 
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:hint="@string/reg_phone_number"
         android:inputType="phone"
-        android:singleLine="true"
         android:selectAllOnFocus="true"
-        app:layout_constraintEnd_toStartOf="@+id/regPhoneCheck"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ccp"
         app:layout_constraintTop_toBottomOf="@+id/passwordRegRepeat" />
 
@@ -99,29 +93,30 @@
         android:id="@+id/regPhoneCheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:enabled="false"
-        android:text="@string/reg_phone_check"
         android:onClick="regPhoneCheckClick"
+        android:text="@string/reg_phone_check"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText_carrierNumber"
-        app:layout_constraintTop_toBottomOf="@+id/passwordRegRepeat" />
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_carrierNumber" />
 
     <Button
         android:id="@+id/regDone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_marginTop="8dp"
+        android:background="#FFC107"
         android:enabled="false"
-        android:text="@string/reg_done"
         android:onClick="regDone"
+        android:text="@string/reg_done"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_carrierNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/regPhoneCheck" />
 
 
 

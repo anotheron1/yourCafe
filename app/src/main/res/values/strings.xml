@@ -4,22 +4,22 @@
     <string name="catalogue_act_name">cafeCatalogue</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in</string>
-    <string name="action_sign_in_short">Sign in</string>
+    <string name="prompt_password">Пароль</string>
+    <string name="action_sign_in">Войти</string>
+    <string name="action_sign_in_short">Войти</string>
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <!-- Strings related to registration -->
-    <string name="reg_fullname">Enter full name</string>
+    <string name="reg_fullname">Введите ФИО</string>
     <string name="reg_email">Email</string>
-    <string name="reg_password">Password</string>
-    <string name="reg_password_repeat">Confirm Password</string>
-    <string name="reg_phone_number">Enter phone number</string>
-    <string name="reg_done">Done</string>
-    <string name="reg_phone_check">Check</string>
-    <string name="action_registration">Registration</string>
+    <string name="reg_password">Пароль</string>
+    <string name="reg_password_repeat">Повторите пароль</string>
+    <string name="reg_phone_number">Введите номер</string>
+    <string name="reg_done">Готово</string>
+    <string name="reg_phone_check">Подтвердить номер телефона</string>
+    <string name="action_registration">Регистрация</string>
     <!-- Strings related to catalogue -->
     <string name="ctg_search">Поиск</string>
     <string name="ctg_1_cafe_name">6/4</string>
@@ -33,4 +33,12 @@
     <string name="caffe_menu_bot">Каждое седьмое посещение, кофе БЕСПЛАТНО</string>
     <string name="caffe_menu_second_tab">Акции</string>
     <string name="caffe_menu_first_tab">qr-код</string>
+    <!-- Strings related to caffe menu -->
+    <string name="cab_edit_cupoun">Купон</string>
+    <string name="cab_edit_descr">Укажите кол-во посещений, после которых клиент получит бонус. Не более 7.</string>
+    <string name="cab_edit_text">Измените текст</string>
+    <string name="cab_edit_condition">Каждое седьмое посещение, БЕСПЛАТНО</string>
+    <string name="cab_edit_restriction">Максимум 20 символов</string>
+    <string name="cab_edit">Редактировать</string>
+    <string name="cab_edit_stock">Акции</string>
 </resources>

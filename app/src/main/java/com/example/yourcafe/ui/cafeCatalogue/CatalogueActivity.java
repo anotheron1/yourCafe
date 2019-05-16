@@ -1,17 +1,13 @@
 package com.example.yourcafe.ui.cafeCatalogue;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.widget.TabHost;
 import android.widget.TextView;
 
 import com.example.yourcafe.R;
-import com.example.yourcafe.ui.caffeClientMenu.ccmActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,23 +17,22 @@ public class CatalogueActivity extends AppCompatActivity {
     private List<Caffe> caffe, caffeFav;
     private RecyclerView rv, rvFav;
     private TabHost tabHost;
-    private CardView cv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalogue);
 
-        tabHost = findViewById(R.id.tabHost);
+        tabHost = findViewById(R.id.tabHostCvt);
         tabHost.setup();
-        setupTab(getString(R.string.action_sign_in), R.id.rv);
+        setupTab(getString(R.string.action_sign_in), R.id.rvCvt);
         setupTab(getString(R.string.registration_act_name), R.id.rvFav);
         for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
             TextView tv = tabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title);
             tv.setTextColor(getResources().getColor(R.color.colorPrimary));
         }
 
-        rv=(RecyclerView)findViewById(R.id.rv);
+        rv=(RecyclerView)findViewById(R.id.rvCvt);
         rvFav=(RecyclerView)findViewById(R.id.rvFav);
 
         LinearLayoutManager llm = new LinearLayoutManager(this);

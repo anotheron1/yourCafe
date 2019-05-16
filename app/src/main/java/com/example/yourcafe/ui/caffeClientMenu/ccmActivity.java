@@ -33,12 +33,6 @@ public class ccmActivity extends AppCompatActivity {
         String caffeName = getIntent().getStringExtra("caffeName");
         Toast.makeText(getApplicationContext(), caffeName, Toast.LENGTH_LONG).show();
 
-//        ActionBar actionBar =getSupportActionBar();
-//        actionBar.setHomeButtonEnabled(true);
-//        actionBar.setSubtitle("Карта клиента");
-//        actionBar.setDisplayHomeAsUpEnabled(true);
-
-
         tabHostCcm = findViewById(R.id.tabHostCcm);
         tabHostCcm.setup();
         setupTab(getString(R.string.caffe_menu_first_tab), R.id.containerCaffeMenu);
@@ -70,28 +64,6 @@ public class ccmActivity extends AppCompatActivity {
     public void toolbarShare(View view) {
 
     }
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.main_menu, menu);
-//                return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            case android.R.id.home:
-//                this.finish();
-//                return true;
-//            case R.id.action_cart_notify:
-//                return true;
-//            case R.id.action_cart_share:
-//                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//    }
 
     private void setupTab(String title, int id) {
         TabHost.TabSpec spec = tabHostCcm.newTabSpec(title);
