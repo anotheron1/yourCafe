@@ -21,12 +21,15 @@
     <string name="reg_phone_check">Подтвердить номер телефона</string>
     <string name="action_registration">Регистрация</string>
     <!-- Strings related to catalogue -->
+    <string name="ctg_ctg">Каталог</string>
+    <string name="ctg_fav">Избранное</string>
     <string name="ctg_search">Поиск</string>
     <string name="ctg_1_cafe_name">6/4</string>
     <string name="ctg_1_cafe_address">Череповец, Советский пр. 26Б</string>
     <string name="ctg_1_cafe_assort">Кофе</string>
     <!-- Strings related to caffe menu -->
     <string name="toolbar_title">Карта клиента</string>
+    <string name="toolbar_title_stock">Акции</string>
     <string name="caffe_menu_header">Твоё кафе</string>
     <string name="caffe_menu_header2">АТМОСФЕРНО-КЛАССНО-ВКУСНО</string>
     <string name="caffe_menu_descr">Это ваш QR-код для получения скидок.</string>
