@@ -3,10 +3,12 @@ package com.example.yourcafe.ui.registration;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
+import android.text.Html;
 import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
@@ -58,6 +60,9 @@ public class RegistrationActivity extends AppCompatActivity implements Validator
         ActionBar actionBar =getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
+//        actionBar.setTitle(Html.fromHtml("<font color='#000000'>Регистрация</font>"));
+//        actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimaryDark)));
+
 
         validator = new Validator(this);
         validator.setValidationListener(this);

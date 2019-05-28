@@ -16,10 +16,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
-            android:background="#673AB7"
+            android:background="@drawable/rounded_purple"
             android:onClick="addStock"
             android:text="Добавить акцию"
-            android:textColor="@android:color/background_light" />
+            android:textColor="#FFFFFF" />
 
         <TabWidget
             android:id="@android:id/tabs"

@@ -33,7 +33,7 @@ public class CatalogueActivity extends AppCompatActivity {
         GetReq req = new GetReq();
         try {
             response = req.run("https://yourcaffeweb.herokuapp.com/Catalogue");
-            Reader reader = new StringReader(response);
+//            Reader reader = new StringReader(response);
             cData = mapper.readValue(response, new TypeReference<List<CaffeData>>() {});
         } catch (IOException e) {
             e.printStackTrace();
@@ -47,7 +47,7 @@ public class CatalogueActivity extends AppCompatActivity {
         setupTab(getString(R.string.ctg_fav), R.id.rvFav);
         for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
             TextView tv = tabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title);
-            tv.setTextColor(getResources().getColor(R.color.colorPrimary));
+            tv.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
         }
 
         rv=(RecyclerView)findViewById(R.id.rvCvt);

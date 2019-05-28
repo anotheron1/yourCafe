@@ -90,14 +90,12 @@
 
     <Button
         android:id="@+id/add_stock_btn"
-        android:layout_width="270dp"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="128dp"
-        android:background="#FFC107"
+        android:background="@drawable/rounded"
         android:text="Создать"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

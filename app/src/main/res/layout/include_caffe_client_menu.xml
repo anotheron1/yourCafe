@@ -2,10 +2,10 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/containerCaffeMenu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#673AB7"
-    android:id="@+id/containerCaffeMenu">
+    android:background="@drawable/bckgrnd">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -13,7 +13,7 @@
         android:layout_height="56dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:background="#502D8F"
+        android:background="#4E0B6E"
         android:minHeight="?attr/actionBarSize"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="140dp">

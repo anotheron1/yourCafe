@@ -110,7 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginTop="8dp"
-        android:background="#FFC107"
+        android:background="@drawable/rounded"
         android:enabled="false"
         android:onClick="regDone"
         android:text="@string/reg_done"

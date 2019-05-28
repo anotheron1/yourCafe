@@ -8,6 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:hardwareAccelerated="false"
         android:theme="@style/AppTheme">
         <activity
             android:theme="@style/AppTheme.NoActionBar"
@@ -20,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity
+
             android:name=".ui.registration.RegistrationActivity"
             android:label="@string/registration_act_name">
         </activity>
