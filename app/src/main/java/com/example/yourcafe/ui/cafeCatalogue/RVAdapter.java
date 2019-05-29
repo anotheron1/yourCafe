@@ -30,6 +30,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
 
         ViewHolder(View v) {
             super(v);
+
             cv = (CardView)v.findViewById(R.id.cv);
             caffeName = (TextView)v.findViewById(R.id.caffe_name);
             caffeAddress = (TextView)v.findViewById(R.id.caffe_address);

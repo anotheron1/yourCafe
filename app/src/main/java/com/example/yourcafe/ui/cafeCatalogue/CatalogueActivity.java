@@ -1,9 +1,11 @@
 package com.example.yourcafe.ui.cafeCatalogue;
 
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.TabHost;
 import android.widget.TextView;
 import com.example.yourcafe.R;
@@ -28,6 +30,12 @@ public class CatalogueActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalogue);
+
+//        this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+//        getSupportActionBar().setDisplayShowCustomEnabled(true);
+//        getSupportActionBar().setCustomView(R.layout.custom_action_bar);
+        //getSupportActionBar().setElevation(0);
+
         cData = new ArrayList<>();
 
         GetReq req = new GetReq();
@@ -92,6 +100,7 @@ public class CatalogueActivity extends AppCompatActivity {
 
     private void initializeAdapter(){
         RVAdapter adapter = new RVAdapter(caffe);
+
         rv.setAdapter(adapter);
         RVAdapter adapterFav = new RVAdapter(caffeFav);
         rvFav.setAdapter(adapterFav);
