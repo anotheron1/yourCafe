@@ -100,7 +100,7 @@ public class AdminActivity extends AppCompatActivity  implements ZBarScannerView
     @Override
     public void handleResult(Result rawResult) {
         // Do something with the result here
-
+        Toast.makeText(this, "Scan done!", Toast.LENGTH_SHORT).show();
         // If you would like to resume scanning, call this method below:
         mScannerView.resumeCameraPreview(this);
     }

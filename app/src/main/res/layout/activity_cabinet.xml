@@ -12,13 +12,16 @@
 
         <Button
             android:id="@+id/add_stock_button"
-            android:layout_width="270dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
             android:layout_marginTop="16dp"
             android:background="@drawable/rounded_purple"
+            android:drawableEnd="@drawable/add_stock_button"
+            android:drawablePadding="-100dp"
+            android:paddingEnd="100dp"
             android:onClick="addStock"
-            android:text="Добавить акцию"
+            android:text="@string/add_stock_button"
             android:textColor="#FFFFFF" />
 
         <TabWidget

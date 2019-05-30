@@ -31,15 +31,17 @@ public class CatalogueActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalogue);
 
-//        cData = new ArrayList<>();
-//        GetReq req = new GetReq();
-//        try {
-//            response = req.run("https://yourcaffeweb.herokuapp.com/Catalogue");
-////            Reader reader = new StringReader(response);
-//            cData = mapper.readValue(response, new TypeReference<List<CaffeData>>() {});
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        cData = new ArrayList<>();
+        GetReq req = new GetReq();
+        try {
+            response = req.run("https://yourcaffeweb.herokuapp.com/Catalogue");
+//            Reader reader = new StringReader(response);
+            if (response == null) {response = "[{\"id\": \"1\",\"name\": \"6/4\",\"address\": \"Череповец, ул. Ленина 35\",\"assortment\": \"Чай, Кофе\",\"image\": null}]";
+            }
+            cData = mapper.readValue(response, new TypeReference<List<CaffeData>>() {});
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
 
         tabHost = findViewById(R.id.tabHostCvt);
         tabHost.setup();
@@ -74,17 +76,17 @@ public class CatalogueActivity extends AppCompatActivity {
 
     private void initializeData(){
         caffe = new ArrayList<>();
-//        for (int i = 0; i < cData.size(); i++) {
-//            String name, address, assortment;
-//            name = cData.get(i).getName();
-//            address = cData.get(i).getAddress();
-//            assortment = cData.get(i).getAssortment();
-//
-//            caffe.add(new Caffe(name, address, assortment, R.mipmap.sfcaffe));
-//        }
-        caffe.add(new Caffe("6/4", "Череповец, ул. Ленина 35", "Чай, Кофе", R.mipmap.sfcaffe));
-        caffe.add(new Caffe("Енот Лиса", "Череповец, Советский пр. 30Б", "Чай, Кофе", R.mipmap.el));
-        caffe.add(new Caffe("ЧайБар", "Череповец, Советский пр. 43", "Чай", R.mipmap.tb));
+        for (int i = 0; i < cData.size(); i++) {
+            String name, address, assortment;
+            name = cData.get(i).getName();
+            address = cData.get(i).getAddress();
+            assortment = cData.get(i).getAssortment();
+
+            caffe.add(new Caffe(name, address, assortment, R.mipmap.sfcaffe));
+        }
+//        caffe.add(new Caffe("6/4", "Череповец, ул. Ленина 35", "Чай, Кофе", R.mipmap.sfcaffe));
+//        caffe.add(new Caffe("Енот Лиса", "Череповец, Советский пр. 30Б", "Чай, Кофе", R.mipmap.el));
+//        caffe.add(new Caffe("ЧайБар", "Череповец, Советский пр. 43", "Чай", R.mipmap.tb));
 
         caffeFav = new ArrayList<>();
         caffeFav.add(new Caffe("Енот Лиса", "Череповец, Советский пр. 30Б", "Чай, Кофе", R.mipmap.el));

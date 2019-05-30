@@ -35,16 +35,15 @@
 
     <TextView
         android:id="@+id/text_cstm_stock"
-        android:layout_width="48dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="24dp"
         android:gravity="center"
         android:text="до"
         android:textColor="#000000"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/edit_cstm_date_stock"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cstm_name_stock" />
 
@@ -124,5 +123,14 @@
         tools:layout_editor_absoluteX="239dp"
         tools:layout_editor_absoluteY="131dp"
         tools:srcCompat="@drawable/edit_stock" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/text_cstm_stock"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/clock"
+        tools:layout_editor_absoluteY="184dp" />
 
 </android.support.constraint.ConstraintLayout>

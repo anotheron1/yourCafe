@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.yourcafe.R;
 import com.example.yourcafe.ui.caffeClientMenu.Stock;
+import com.example.yourcafe.ui.login.LoginActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +34,7 @@ public class CabinetActivity extends AppCompatActivity {
 
         ActionBar actionBar =getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
-        actionBar.setBackgroundDrawable(Drawable.createFromPath("@drawable/back_arrow"));
+//        actionBar.setBackgroundDrawable(Drawable.createFromPath("@drawable/back_arrow"));
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         tabHostCvt = findViewById(R.id.tabHostCvt);
@@ -64,6 +65,8 @@ public class CabinetActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 this.finish();
+                Intent intent = new Intent(CabinetActivity.this, AdminActivity.class);
+                startActivity(intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -79,11 +82,11 @@ public class CabinetActivity extends AppCompatActivity {
 
     private void initializeData(){
         cvt = new ArrayList<>();
-        cvt.add(new CardViewTextImage(getString(R.string.cab_edit_cupoun), R.mipmap.sfcaffe, getString(R.string.cab_edit_descr)));
+        cvt.add(new CardViewTextImage(getString(R.string.cab_edit_cupoun), R.drawable.fill_cup, getString(R.string.cab_edit_descr)));
         cvt.add(new CardViewText(getString(R.string.cab_edit_text), getString(R.string.cab_edit_condition), getString(R.string.cab_edit_restriction)));
 
         stock = new ArrayList<>();
-        stock.add(new Stock("Первый заказ бесплатно!", "до 21.04.2019", "Добро пожаловать!", R.drawable.fill_cup));
+        stock.add(new Stock("Первый заказ бесплатно!", "до 21.04.2019", "Добро пожаловать!", R.drawable.stock1));
     }
 
     private void initializeAdapter(){
