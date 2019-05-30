@@ -26,7 +26,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
         TextView caffeAssortment;
         ImageView caffePhoto;
         Button caffeButton;
-        public Caffe currentCaffe;
+        Caffe currentCaffe;
 
         ViewHolder(View v) {
             super(v);
@@ -48,7 +48,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
         }
     }
 
-    List<Caffe> caffe;
+    private List<Caffe> caffe;
 
     RVAdapter(List<Caffe> caffe){
         this.caffe = caffe;

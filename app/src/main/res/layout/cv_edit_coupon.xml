@@ -8,12 +8,13 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="8dp">
+        android:padding="0dp">
 
         <TextView
             android:id="@+id/edit_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
             android:layout_marginStart="6dp"
             android:layout_marginLeft="6dp"
             android:hint="@string/cab_edit_cupoun"
@@ -21,14 +22,18 @@
 
         <ImageView
             android:id="@+id/image_view_coupon"
-            android:layout_width="57dp"
-            android:layout_height="59dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_below="@+id/edit_name"
-            app:srcCompat="@mipmap/favstar" />
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/fill_cup"
+            android:src="@drawable/fill_cup" />
 
         <EditText
             android:id="@+id/editTextNumber"
-            android:layout_width="58dp"
+            android:layout_width="39dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
@@ -42,12 +47,15 @@
 
         <TextView
             android:id="@+id/edit_description"
-            android:layout_width="wrap_content"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/image_view_coupon"
-            android:layout_marginStart="6dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="8dp"
             android:layout_marginLeft="6dp"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="54dp"
             android:hint="@string/cab_edit_descr"
             android:textSize="12sp" />
 

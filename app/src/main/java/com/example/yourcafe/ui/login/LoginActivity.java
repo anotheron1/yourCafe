@@ -103,6 +103,13 @@ public class LoginActivity extends AppCompatActivity {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
                     loginViewModel.login(usernameEditText.getText().toString(),
                             passwordEditText.getText().toString());
+                    if (usernameEditText.getText().toString().equals("client@mail.ru")) {
+                        Intent intent = new Intent(LoginActivity.this, CatalogueActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
+                        startActivity(intent);
+                    }
                 }
                 return false;
             }

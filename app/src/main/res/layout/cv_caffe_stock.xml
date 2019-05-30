@@ -2,12 +2,12 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/cv_caffe_stock"
     android:layout_width="match_parent"
-    android:layout_height="240dp">
+    android:layout_height="300dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="8dp">
+        android:padding="0dp">
 
         <TextView
             android:id="@+id/edit_name"
@@ -15,6 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:layout_marginLeft="6dp"
+            android:layout_marginTop="8dp"
             android:textSize="16sp" />
 
         <TextView
@@ -30,8 +31,9 @@
         <ImageView
             android:id="@+id/stock_photo"
             android:layout_width="fill_parent"
-            android:layout_height="160dp"
-            android:layout_below="@+id/stock_date" />
+            android:layout_height="200dp"
+            android:layout_below="@+id/stock_date"
+            android:scaleType="fitCenter" />
 
         <TextView
             android:id="@+id/edit_description"
@@ -40,7 +42,7 @@
             android:layout_below="@+id/stock_photo"
             android:layout_marginStart="6dp"
             android:layout_marginLeft="6dp"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="16dp"
             android:textSize="12sp" />
 
     </RelativeLayout>

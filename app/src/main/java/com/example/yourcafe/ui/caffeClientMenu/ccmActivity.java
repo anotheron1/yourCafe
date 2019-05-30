@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -32,6 +33,7 @@ public class ccmActivity extends AppCompatActivity {
         setContentView(R.layout.activity_caffe_client_menu);
         String caffeName = getIntent().getStringExtra("caffeName");
         Toast.makeText(getApplicationContext(), caffeName, Toast.LENGTH_LONG).show();
+//        Toolbar toolbar = findViewById(R.id.toolbar_stock1);
 
         tabHostCcm = findViewById(R.id.tabHostCcm);
         tabHostCcm.setup();
@@ -77,12 +79,15 @@ public class ccmActivity extends AppCompatActivity {
 
     private void initializeData(){
         stock = new ArrayList<>();
-        stock.add(new Stock("30% скидка на Американо!", "до 20.04.2019", "У нас вкусный кофе", R.mipmap.sfcaffe));
-        stock.add(new Stock("Первый заказ бесплатно!", "до 21.04.2019", "Добро пожаловать!", R.mipmap.el));
+        stock.add(new Stock("30% скидка на Американо!", "до 20.04.2019", "У нас вкусный кофе", R.drawable.stock1));
+        stock.add(new Stock("Первый заказ бесплатно!", "до 21.04.2019", "Добро пожаловать!", R.drawable.stock1));
     }
 
     private void initializeAdapter(){
+
         RVACaffeStock adapter = new RVACaffeStock(stock);
+//        adapter.getItemId(toolbar);
         rvStock.setAdapter(adapter);
+
     }
 }

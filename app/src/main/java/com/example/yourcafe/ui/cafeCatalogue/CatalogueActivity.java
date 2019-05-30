@@ -23,7 +23,7 @@ public class CatalogueActivity extends AppCompatActivity {
     private List<CaffeData> cData;
     private RecyclerView rv, rvFav;
     private TabHost tabHost;
-    private String response;
+    String response;
     final ObjectMapper mapper = new ObjectMapper();
 
     @Override
@@ -31,23 +31,15 @@ public class CatalogueActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalogue);
 
-//        this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-//        getSupportActionBar().setDisplayShowCustomEnabled(true);
-//        getSupportActionBar().setCustomView(R.layout.custom_action_bar);
-        //getSupportActionBar().setElevation(0);
-
-        cData = new ArrayList<>();
-
-        GetReq req = new GetReq();
-        try {
-            response = req.run("https://yourcaffeweb.herokuapp.com/Catalogue");
-//            Reader reader = new StringReader(response);
-            cData = mapper.readValue(response, new TypeReference<List<CaffeData>>() {});
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
+//        cData = new ArrayList<>();
+//        GetReq req = new GetReq();
+//        try {
+//            response = req.run("https://yourcaffeweb.herokuapp.com/Catalogue");
+////            Reader reader = new StringReader(response);
+//            cData = mapper.readValue(response, new TypeReference<List<CaffeData>>() {});
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         tabHost = findViewById(R.id.tabHostCvt);
         tabHost.setup();
@@ -82,17 +74,17 @@ public class CatalogueActivity extends AppCompatActivity {
 
     private void initializeData(){
         caffe = new ArrayList<>();
-        for (int i = 0; i < cData.size(); i++) {
-            String name, address, assortment;
-            name = cData.get(i).getName();
-            address = cData.get(i).getAddress();
-            assortment = cData.get(i).getAssortment();
-
-            caffe.add(new Caffe(name, address, assortment, R.mipmap.sfcaffe));
-        }
-//        caffe.add(new Caffe("6/4", "Череповец, ул. Ленина 35", "Чай, Кофе", R.mipmap.sfcaffe));
-//        caffe.add(new Caffe("Енот Лиса", "Череповец, Советский пр. 30Б", "Чай, Кофе", R.mipmap.el));
-//        caffe.add(new Caffe("ЧайБар", "Череповец, Советский пр. 43", "Чай", R.mipmap.tb));
+//        for (int i = 0; i < cData.size(); i++) {
+//            String name, address, assortment;
+//            name = cData.get(i).getName();
+//            address = cData.get(i).getAddress();
+//            assortment = cData.get(i).getAssortment();
+//
+//            caffe.add(new Caffe(name, address, assortment, R.mipmap.sfcaffe));
+//        }
+        caffe.add(new Caffe("6/4", "Череповец, ул. Ленина 35", "Чай, Кофе", R.mipmap.sfcaffe));
+        caffe.add(new Caffe("Енот Лиса", "Череповец, Советский пр. 30Б", "Чай, Кофе", R.mipmap.el));
+        caffe.add(new Caffe("ЧайБар", "Череповец, Советский пр. 43", "Чай", R.mipmap.tb));
 
         caffeFav = new ArrayList<>();
         caffeFav.add(new Caffe("Енот Лиса", "Череповец, Советский пр. 30Б", "Чай, Кофе", R.mipmap.el));

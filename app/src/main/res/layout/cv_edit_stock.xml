@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cv_edit_stock"
     android:layout_width="match_parent"
-    android:layout_height="240dp">
+    android:layout_height="300dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="8dp">
+        android:padding="0dp">
 
         <TextView
             android:id="@+id/edit_stock_name"
@@ -16,17 +16,19 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:layout_marginLeft="6dp"
+            android:layout_marginTop="8dp"
             android:textSize="16sp" />
 
         <ImageButton
             android:id="@+id/edit_stock_button"
             style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
+            android:layout_width="53dp"
             android:layout_height="wrap_content"
             android:layout_above="@+id/edit_stock_photo"
             android:layout_alignParentRight="true"
+            android:layout_marginBottom="-1dp"
             android:onClick="edtStcBttn"
-            app:srcCompat="@drawable/ccp_down_arrow" />
+            android:src="@drawable/edit_button" />
 
         <TextView
             android:id="@+id/edit_stock_date"
@@ -41,8 +43,9 @@
         <ImageView
             android:id="@+id/edit_stock_photo"
             android:layout_width="fill_parent"
-            android:layout_height="160dp"
-            android:layout_below="@+id/edit_stock_date" />
+            android:layout_height="200dp"
+            android:layout_below="@+id/edit_stock_date"
+            android:scaleType="fitCenter" />
 
         <TextView
             android:id="@+id/edit_stock_description"
@@ -51,7 +54,7 @@
             android:layout_below="@+id/edit_stock_photo"
             android:layout_marginStart="6dp"
             android:layout_marginLeft="6dp"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="16dp"
             android:textSize="12sp" />
 
     </RelativeLayout>

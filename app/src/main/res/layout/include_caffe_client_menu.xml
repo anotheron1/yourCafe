@@ -10,37 +10,37 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:background="#4E0B6E"
         android:minHeight="?attr/actionBarSize"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="140dp">
+        tools:layout_editor_absoluteX="21dp">
 
         <ImageButton
             android:id="@+id/back_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentTop="false"
             android:layout_alignParentRight="true"
             android:background="?attr/actionBarItemBackground"
             android:onClick="toolbarBack"
-            android:scaleType="centerInside"
-            android:src="?attr/actionModeCloseDrawable"
+            android:scaleType="fitStart"
+            android:src="@drawable/back_arrow"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="16dp" />
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="170dp"
+            android:layout_width="230dp"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="false"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:gravity="center"
+            android:gravity="left|center_vertical"
             android:text="@string/toolbar_title"
             android:textColor="#ffffff"
             android:textSize="20sp"
@@ -49,8 +49,8 @@
 
         <ImageButton
             android:id="@+id/notify_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
@@ -58,26 +58,39 @@
             android:layout_alignParentRight="true"
             android:background="?attr/actionBarItemBackground"
             android:onClick="toolbarNotify"
-            android:scaleType="centerInside"
-            android:src="@mipmap/phoneic" />
+            android:scaleType="fitCenter"
+            android:src="@drawable/notifications"
+            tools:layout_editor_absoluteX="329dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <ImageButton
+            android:id="@+id/rrr"
+            android:layout_width="15dp"
+            android:layout_height="30dp"
+            android:background="#4E0B6E"
+            tools:layout_editor_absoluteX="347dp"
+            tools:layout_editor_absoluteY="12dp" />
 
         <ImageButton
             android:id="@+id/share_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:background="?attr/actionBarItemBackground"
             android:onClick="toolbarShare"
-            android:scaleType="centerInside"
-            android:src="@mipmap/phoneic" />
+            android:scaleType="fitCenter"
+            android:src="@drawable/share"
+            tools:layout_editor_absoluteX="351dp"
+            tools:layout_editor_absoluteY="16dp" />
     </android.support.v7.widget.Toolbar>
 
     <CheckBox
         android:id="@+id/checkBox"
-        android:layout_width="36dp"
-        android:layout_height="44dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="12dp"
         android:button="@drawable/fav_star"
         android:gravity="center"
@@ -89,23 +102,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="64dp"
         android:layout_marginRight="8dp"
         android:hint="@string/caffe_menu_header"
         android:textColorHint="@android:color/background_light"
         android:textSize="76sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/menuCaffeHead2"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:gravity="center"
         android:hint="@string/caffe_menu_header2"
         android:textColorHint="@android:color/background_light"
         android:textSize="18sp"
@@ -115,39 +129,41 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="178dp"
-        android:layout_height="119dp"
+        android:layout_width="291dp"
+        android:layout_height="256dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginTop="116dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menuCaffeHead2"
-        app:srcCompat="@mipmap/sf" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/qrcode" />
 
     <TextView
         android:id="@+id/caffeId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="328dp"
         android:layout_marginEnd="8dp"
         android:text="ID: 1234567891"
-        android:textColorHint="#FFC107"
+        android:textColor="#FFDC26"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/menuCaffeDescr"
-        android:layout_width="wrap_content"
-        android:layout_height="10dp"
+        android:layout_width="350dp"
+        android:layout_height="25dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:gravity="center"
         android:hint="@string/caffe_menu_descr"
         android:textColorHint="@android:color/background_light"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/caffeId" />
@@ -155,22 +171,23 @@
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="24dp"
-        android:background="#D19B3D"
+        android:layout_height="3dp"
+        android:layout_marginTop="16dp"
+        android:background="#FFDC26"
         app:layout_constraintTop_toBottomOf="@+id/menuCaffeDescr"
         tools:layout_editor_absoluteX="4dp" />
 
     <ProgressBar
         android:id="@+id/caffeCupPogressBar"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="295dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:visibility="visible"
+        android:indeterminate="false"
+        android:max="7"
+        android:progress="3"
+        android:indeterminateDrawable="@drawable/fill_cup"
+        android:layout_width="360dp"
+        android:layout_height="46dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
@@ -178,29 +195,33 @@
     <TextView
         android:id="@+id/menuCaffeTextBot"
         android:layout_width="270dp"
-        android:layout_height="52dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:gravity="center"
         android:hint="@string/caffe_menu_bot"
         android:textColorHint="@android:color/background_light"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/caffeCupPogressBar" />
+        app:layout_constraintTop_toBottomOf="@+id/caffeCupPogressBar"
+        app:layout_constraintVertical_bias="0.175" />
 
     <Button
         android:id="@+id/button"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="63dp"
-        android:layout_height="57dp"
+        android:layout_width="61dp"
+        android:layout_height="61dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginTop="300dp"
         android:layout_marginEnd="8dp"
-        android:src="@mipmap/phoneic"
+        android:background="@drawable/phoneic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.769"
         app:layout_constraintStart_toEndOf="@+id/caffeId"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 </android.support.constraint.ConstraintLayout>

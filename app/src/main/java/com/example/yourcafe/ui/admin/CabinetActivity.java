@@ -1,6 +1,9 @@
 package com.example.yourcafe.ui.admin;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -30,6 +33,7 @@ public class CabinetActivity extends AppCompatActivity {
 
         ActionBar actionBar =getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
+        actionBar.setBackgroundDrawable(Drawable.createFromPath("@drawable/back_arrow"));
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         tabHostCvt = findViewById(R.id.tabHostCvt);
@@ -79,7 +83,7 @@ public class CabinetActivity extends AppCompatActivity {
         cvt.add(new CardViewText(getString(R.string.cab_edit_text), getString(R.string.cab_edit_condition), getString(R.string.cab_edit_restriction)));
 
         stock = new ArrayList<>();
-        stock.add(new Stock("Первый заказ бесплатно!", "до 21.04.2019", "Добро пожаловать!", R.mipmap.el));
+        stock.add(new Stock("Первый заказ бесплатно!", "до 21.04.2019", "Добро пожаловать!", R.drawable.fill_cup));
     }
 
     private void initializeAdapter(){

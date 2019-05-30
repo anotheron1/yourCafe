@@ -1,5 +1,6 @@
 package com.example.yourcafe.ui.admin;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,7 @@ public class AddStockActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
+        actionBar.setBackgroundDrawable(Drawable.createFromPath("@drawable/back_arrow"));
         actionBar.setDisplayHomeAsUpEnabled(true);
     }
 

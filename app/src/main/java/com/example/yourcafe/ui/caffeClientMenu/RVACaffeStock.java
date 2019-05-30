@@ -32,7 +32,7 @@ public class RVACaffeStock extends RecyclerView.Adapter<RVACaffeStock.ViewHolder
         }
     }
 
-    List<Stock> stock;
+    private List<Stock> stock;
 
     RVACaffeStock(List<Stock> stock){
         this.stock = stock;
@@ -56,7 +56,6 @@ public class RVACaffeStock extends RecyclerView.Adapter<RVACaffeStock.ViewHolder
         viewHolder.stockDate.setText(stock.get(i).date);
         viewHolder.stockPhoto.setImageResource(stock.get(i).sPhotoId);
         viewHolder.stockDescription.setText(stock.get(i).description);
-
     }
 
     @Override
