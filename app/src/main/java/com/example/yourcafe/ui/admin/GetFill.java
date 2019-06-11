@@ -1,8 +1,7 @@
-package com.example.yourcafe.ui.cafeCatalogue;
+package com.example.yourcafe.ui.admin;
 
 import java.io.IOException;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -11,7 +10,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 
-class GetReq {
+public class GetFill {
     private OkHttpClient client = new OkHttpClient();
     private String respstring;
     private CountDownLatch countDownLatch;

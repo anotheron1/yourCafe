@@ -25,11 +25,14 @@ public class CatalogueActivity extends AppCompatActivity {
     private TabHost tabHost;
     String response;
     final ObjectMapper mapper = new ObjectMapper();
+    static String client_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalogue);
+        client_id = getIntent().getStringExtra("client_id");
+        setClient_id(client_id);
 
         cData = new ArrayList<>();
         GetReq req = new GetReq();
@@ -98,5 +101,13 @@ public class CatalogueActivity extends AppCompatActivity {
         rv.setAdapter(adapter);
         RVAdapter adapterFav = new RVAdapter(caffeFav);
         rvFav.setAdapter(adapterFav);
+    }
+
+    public String getClient_id() {
+        return client_id;
+    }
+
+    public void setClient_id(String client_id) {
+        CatalogueActivity.client_id = client_id;
     }
 }

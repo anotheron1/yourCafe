@@ -27,9 +27,14 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
         ImageView caffePhoto;
         Button caffeButton;
         Caffe currentCaffe;
+        CatalogueActivity ca;
+
 
         ViewHolder(View v) {
             super(v);
+
+            ca = new CatalogueActivity();
+            final String client_id = ca.getClient_id();
 
             cv = (CardView)v.findViewById(R.id.cv);
             caffeName = (TextView)v.findViewById(R.id.caffe_name);
@@ -40,8 +45,12 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
             caffeButton.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
                     Context context = v.getContext();
+                    //передаем параметры клиента джсон строкой (айди клиента)
+                    //делаем ПОСТ с названием кафейни на получение количества чашек в этом кафе и куэр кода
+                    //передаем полученную строку респонса в дальнейшее активити
                     Intent intent = new Intent(context, ccmActivity.class);
-                    intent.putExtra("caffeName", caffeName.getText());
+                    intent.putExtra("caffe_id", getAdapterPosition() + 1);
+                    intent.putExtra("client_id", client_id);
                     context.startActivity(intent);
                 }
             });

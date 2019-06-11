@@ -27,11 +27,12 @@
             android:layout_below="@+id/edit_name2"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="6dp"
+            android:layout_marginTop="0dp"
             android:hint="@string/cab_edit_condition"
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/editTextNumber2"
             android:layout_width="79dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"

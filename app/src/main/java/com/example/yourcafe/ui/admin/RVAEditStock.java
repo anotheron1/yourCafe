@@ -25,7 +25,6 @@ public class RVAEditStock extends RecyclerView.Adapter<RVAEditStock.ViewHolder> 
         TextView stockDate;
         ImageView stockPhoto;
         TextView stockDescription;
-        Button editBtn;
 
         ViewHolder(View v) {
             super(v);

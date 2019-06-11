@@ -1,22 +1,21 @@
 package com.example.yourcafe.ui.admin;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TabHost;
 import android.widget.TextView;
 
 import com.example.yourcafe.R;
 import com.example.yourcafe.ui.caffeClientMenu.Stock;
-import com.example.yourcafe.ui.login.LoginActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +30,10 @@ public class CabinetActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cabinet);
+//        final EditText numberEditText = findViewById(R.id.editTextNumber1);
+//        final TextView cnd = findViewById(R.id.edit_condition2);
+
+
 
         ActionBar actionBar =getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
@@ -58,6 +61,24 @@ public class CabinetActivity extends AppCompatActivity {
 
         initializeData();
         initializeAdapter();
+
+//        TextWatcher afterTextChangedListener = new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//                // ignore
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//                // ignore
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//                cnd.setText("Каждое" + numberEditText.getText() + "посещение /n БЕСПЛАТНО");
+//            }
+//        };
+//        tabHostCvt.getCurrentView().findViewById(R.id.editTextNumber1).addOnUnhandledKeyEventListener(afterTextChangedListener);//ddTextChangedListener(afterTextChangedListener);
     }
 
     @Override

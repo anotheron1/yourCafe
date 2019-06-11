@@ -23,10 +23,20 @@ import com.example.yourcafe.R;
 import com.example.yourcafe.ui.admin.AdminActivity;
 import com.example.yourcafe.ui.cafeCatalogue.CatalogueActivity;
 import com.example.yourcafe.ui.registration.RegistrationActivity;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
+    String response;
+    final ObjectMapper mapper = new ObjectMapper();
+    List <Clients> cliData = new ArrayList<>();
+    GetCli req = new GetCli();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -94,6 +104,9 @@ public class LoginActivity extends AppCompatActivity {
                         passwordEditText.getText().toString());
             }
         };
+
+
+
         usernameEditText.addTextChangedListener(afterTextChangedListener);
         passwordEditText.addTextChangedListener(afterTextChangedListener);
         passwordEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -103,11 +116,30 @@ public class LoginActivity extends AppCompatActivity {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
                     loginViewModel.login(usernameEditText.getText().toString(),
                             passwordEditText.getText().toString());
-                    if (usernameEditText.getText().toString().equals("client@mail.ru")) {
+                    try {
+                        response = "[" + req.run("https://yourcaffeweb.herokuapp.com/Users/" + usernameEditText.getText().toString()) + "]";
+                        if (response.equals("[null]")) {
+                            response = "[{\"user_type\":\"1\",\"email\":\"client@mail.ru\",\"password\":\"client\",\"client_id\":\"1234567890\",\"caffe_id\":null}]";
+                        }
+                        cliData = mapper.readValue(response, new TypeReference<List<Clients>>() {});
+                    } catch (IOException | InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    String user_type = "", client_id = "", caffe_id = "";
+                    for (int i = 0; i < cliData.size(); i++) {
+
+                        user_type = cliData.get(i).getUser_type();
+                        client_id = cliData.get(i).getClient_id();
+                        caffe_id = cliData.get(i).getCaffe_id();
+                    }
+                    if (user_type.equals("1")) {
                         Intent intent = new Intent(LoginActivity.this, CatalogueActivity.class);
+                        intent.putExtra("client_id", client_id);
                         startActivity(intent);
                     } else {
                         Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
+                        intent.putExtra("caffe_id", caffe_id);
+                        intent.putExtra("client_id", client_id);
                         startActivity(intent);
                     }
                 }
@@ -121,11 +153,29 @@ public class LoginActivity extends AppCompatActivity {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
-                if (usernameEditText.getText().toString().equals("client@mail.ru")) {
+                try {
+                    response = "[" + req.run("https://yourcaffeweb.herokuapp.com/Users/" + usernameEditText.getText().toString()) + "]";
+                    if (response.equals("[null]")) {
+                        response = "[{\"user_type\":\"1\",\"email\":\"client@mail.ru\",\"password\":\"client\",\"client_id\":\"1234567890\",\"caffe_id\":null}]";
+                    }
+                    cliData = mapper.readValue(response, new TypeReference<List<Clients>>() {});
+                } catch (IOException | InterruptedException e) {
+                    e.printStackTrace();
+                }
+                String user_type = "", client_id = "", caffe_id = "";
+                for (int i = 0; i < cliData.size(); i++) {
+
+                    user_type = cliData.get(i).getUser_type();
+                    client_id = cliData.get(i).getClient_id();
+                    caffe_id = cliData.get(i).getCaffe_id();
+                }
+                if (user_type.equals("1")) {
                     Intent intent = new Intent(LoginActivity.this, CatalogueActivity.class);
+                    intent.putExtra("client_id", client_id);
                     startActivity(intent);
                 } else {
                     Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
+                    intent.putExtra("caffe_id", caffe_id);
                     startActivity(intent);
                 }
             }

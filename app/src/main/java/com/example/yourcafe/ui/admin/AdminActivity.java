@@ -12,6 +12,13 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.yourcafe.R;
+import com.example.yourcafe.ui.login.Clients;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import me.dm7.barcodescanner.zbar.Result;
 import me.dm7.barcodescanner.zbar.ZBarScannerView;
@@ -19,12 +26,19 @@ import me.dm7.barcodescanner.zbar.ZBarScannerView;
 public class AdminActivity extends AppCompatActivity  implements ZBarScannerView.ResultHandler {
     private ZBarScannerView mScannerView;
     static final Integer CAMERA = 0x1;
+    String caffe_id;
+    String client_id;
+    String response;
+    final ObjectMapper mapper = new ObjectMapper();
+//    List<Clients> cliData = new ArrayList<>();
+    GetFill req = new GetFill();
 
     @Override
     public void onCreate(Bundle state) {
         super.onCreate(state);
         setContentView(R.layout.activity_admin);
-
+        caffe_id = getIntent().getStringExtra("caffe_id");
+//        client_id = getIntent().getStringExtra("client_id");
         ViewGroup contentFrame = (ViewGroup) findViewById(R.id.content_frame);
         mScannerView = new ZBarScannerView(this);
         contentFrame.addView(mScannerView);
@@ -100,13 +114,24 @@ public class AdminActivity extends AppCompatActivity  implements ZBarScannerView
     @Override
     public void handleResult(Result rawResult) {
         // Do something with the result here
-        Toast.makeText(this, "Scan done!", Toast.LENGTH_SHORT).show();
+        //в резалте будет айди клиента. делаем ПОСТ с айди клиена, айжи кофейни и "чашка +1"
+        client_id = rawResult.getContents();
+        try {
+            response = req.run("https://yourcaffeweb.herokuapp.com/Interaction/FillCup?caffe_id=" + caffe_id + "&client_id=" + client_id);
+            if (response == null) {response = "[{\"id\":1,\"client_id\":\"1234567890\",\"client_qr\":null,\"caffe_id\":\"1\",\"all_cup\":\"7\",\"fill_cup\":\"3\"}]";
+            }
+//            cliData = mapper.readValue(response, new TypeReference<List<Clients>>() {});
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        Toast.makeText(this, "Cup filled!", Toast.LENGTH_SHORT).show();
         // If you would like to resume scanning, call this method below:
         mScannerView.resumeCameraPreview(this);
     }
 
     public void admButton(View view) {
         this.finish();
+        //передаем айди кофейни
         Intent intent = new Intent(AdminActivity.this, CabinetActivity.class);
         startActivity(intent);
     }

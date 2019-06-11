@@ -32,7 +32,7 @@
             android:src="@drawable/fill_cup" />
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/editTextNumber1"
             android:layout_width="39dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"

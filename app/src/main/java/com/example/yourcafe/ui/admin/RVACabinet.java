@@ -84,11 +84,6 @@ public class RVACabinet extends RecyclerView.Adapter {
             return null;
         }
     }
-//    {
-//        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cv_edit_coupon, viewGroup, false);
-//        RVACabinet.ViewHolder vh = new RVACabinet.ViewHolder(v);
-//        return vh;
-//    }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
